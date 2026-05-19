@@ -1,7 +1,12 @@
 //Presentacional : se encarga del JSX (div,texto)
-const ProductCard = () => {
+const ProductCard = ({ product }) => {
+  // console.log('Este es el product', product);
   return (
-    <div>ProductCard</div>
-  )
-}
-export default ProductCard
+    <article>
+      <img src={product.img} alt='' />
+      <h3>{product.name}</h3>
+      <p>Precio: ${product.price}</p>
+    </article>
+  );
+};
+export default ProductCard;
