@@ -1,16 +1,14 @@
 const Header = (props) => {
-  //`${props.title}` -> {props.title}
-
   return (
-    <header>
-      <h1>{props.title}</h1>
-      <nav>
-        <a href={props.links[0]}>link</a>
-        <a href={props.links[1]}>link</a>
-        <a href={props.links[2]}>link</a>
+    <header className="flex justify-between p-4 bg-[#eddb22] shadow-md">
+      <h1 className="font-bold text-2xl">{props.title}</h1>
+      <nav className="flex gap-8">
+        <a href={"#"} className="text-[#9b9165] hover:text-black">link 1</a>
+        <a href={"#"} className="text-[#9b9165] hover:text-black">link 2</a>
+        <a href={"#"} className="text-[#9b9165] hover:text-black">link 3</a>
       </nav>
     </header>
   );
-};
+}; 
 
 export default Header;

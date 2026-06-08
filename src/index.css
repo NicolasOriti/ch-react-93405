@@ -1,5 +1,12 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
+@import "tailwindcss";
+
+
+/* 
+
+primary : #eddb22
+secondary : #9b9165
+accent : #1b3d2f
+
+#fdf9ec
+
+*/

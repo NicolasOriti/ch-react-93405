@@ -1,12 +1,13 @@
-//Presentacional : se encarga del JSX (div,texto)
 const ProductCard = ({ product }) => {
-  // console.log('Este es el product', product);
   return (
-    <article>
-      <img src={product.img} alt='' />
-      <h3>{product.name}</h3>
-      <p>Precio: ${product.price}</p>
+    <article className="rounded-md shadow-md overflow-hidden hover:scale-105 hover:shadow-xl transition-all group">
+      <img src={product.image} alt={product.title} className="h-50 w-full object-cover" />
+      <div className="p-4 group-hover:bg-[#fdf9ec]">
+        <h3 className="truncate text-gray-400">{product.title}</h3>
+        <p className="font-bold">{new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS' }).format(product.price)}</p>
+      </div>
     </article>
   );
 };
+
 export default ProductCard;
