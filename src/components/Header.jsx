@@ -1,14 +1,24 @@
+import { Link } from 'react-router-dom';
+
 const Header = (props) => {
   return (
-    <header className="flex justify-between p-4 bg-[#eddb22] shadow-md">
-      <h1 className="font-bold text-2xl">{props.title}</h1>
-      <nav className="flex gap-8">
-        <a href={"#"} className="text-[#9b9165] hover:text-black">link 1</a>
-        <a href={"#"} className="text-[#9b9165] hover:text-black">link 2</a>
-        <a href={"#"} className="text-[#9b9165] hover:text-black">link 3</a>
+    <header className='flex justify-between p-4 bg-[#eddb22] shadow-md'>
+      <Link to='/'>
+        <h1 className='font-bold text-2xl'>{props.title}</h1>
+      </Link>
+      <nav className='flex gap-8'>
+        <Link to={'/products'} className='text-[#9b9165] hover:text-black'>
+          Productos
+        </Link>
+        <Link to={'/cart'} className='text-[#9b9165] hover:text-black'>
+          Carrito
+        </Link>
+        <Link to={'/about'} className='text-[#9b9165] hover:text-black'>
+          Nosotros
+        </Link>
       </nav>
     </header>
   );
-}; 
+};
 
 export default Header;
