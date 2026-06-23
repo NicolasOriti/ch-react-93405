@@ -1,8 +1,11 @@
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+
+import { CartContext } from '../context/CartProvider';
 
 const ProductCard = ({ product }) => {
   const navigate = useNavigate();
+  const { addToCart } = useContext(CartContext);
 
   return (
     <div>
@@ -20,7 +23,7 @@ const ProductCard = ({ product }) => {
         </article>
       </Link>
       <button
-        onClick={() => navigate('/cart')}
+        onClick={() => addToCart(product)}
         className='bg-[#fdf9ec] rounded-full p-2 w-full mt-2 hover:bg-[#fce8c3] transition-colors'
       >
         Añadir al carrito

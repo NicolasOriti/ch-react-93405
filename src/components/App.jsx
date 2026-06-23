@@ -1,4 +1,4 @@
-import { lazy } from 'react';
+import { lazy, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import Header from './Header';
@@ -10,19 +10,22 @@ import ProductsPage from '../pages/ProductsPage';
 import CartPage from '../pages/CartPage';
 import AboutPage from '../pages/AboutPage';
 import DetailProductPage from '../pages/DetailProductPage';
+import { CartProvider } from '../context/CartProvider';
 
 const App = () => {
   return (
     <>
-      <Routes>
-        <Route path='/' element={<Layout />}>
-          <Route path='/' element={<HomePage />} />
-          <Route path='/products' element={<ProductsPage />} />
-          <Route path='/cart' element={<CartPage />} />
-          <Route path='/about' element={<AboutPage />} />
-          <Route path='/products/:productId' element={<DetailProductPage />} />
-        </Route>
-      </Routes>
+      <CartProvider>
+        <Routes>
+          <Route path='/' element={<Layout />}>
+            <Route path='/' element={<HomePage />} />
+            <Route path='/products' element={<ProductsPage />} />
+            <Route path='/cart' element={<CartPage />} />
+            <Route path='/about' element={<AboutPage />} />
+            <Route path='/products/:productId' element={<DetailProductPage />} />
+          </Route>
+        </Routes>
+      </CartProvider>
     </>
   );
 };
